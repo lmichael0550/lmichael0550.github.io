@@ -1,0 +1,251 @@
+body {
+    background-color: #fff0f5; /* Light pink background */
+    color: #8b0000; /* Dark red for text */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .container {
+    background-color: #ffffff; /* White container */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 500px;
+    position: relative; /* Make container a positioning context */
+    z-index: 2; /* Higher z-index to appear above cats */
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff1493; /* Deep pink for headings */
+  }
+  
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 15px 0;
+    color: #8b0000; /* Dark red for paragraphs */
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    color: #ff1493; /* Deep pink for subheadings */
+    margin: 20px 0;
+    min-height: 60px; /* For question spacing */
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  
+  #yesButton {
+    background-color: #ff1493; /* Deep pink for "Yes" button */
+    color: #ffffff;
+  }
+  
+  #noButton {
+    background-color: #8b0000; /* Dark red for "No" button */
+    color: #ffffff;
+  }
+  
+  button:hover {
+    transform: scale(1.1);
+  }
+  
+  #response {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #ff1493; /* Deep pink for response text */
+  }
+  
+  /* Cat Styles */
+  .cat {
+    position: absolute;
+    background-color: #000000; /* Black cats */
+    border-radius: 45%;
+    z-index: 1; /* Lower z-index to appear behind the container */
+  }
+  
+  .boba {
+    width: 150px;
+    height: 150px;
+    top: 20%; /* Center vertically */
+    left: 35%; /* Center horizontally */
+    transform: translate(-100%, -100%); /* Move to top-left corner */
+    animation: float 6s infinite ease-in-out;
+  }
+  
+  .sago {
+    width: 80px;
+    height: 80px;
+    top: 25%; /* Center vertically */
+    left: 60%; /* Center horizontally */
+    transform: translate(0%, -100%); /* Move to top-right corner */
+    animation: float 4s infinite ease-in-out;
+  }
+  
+  .ear {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #000000; /* Black ears */
+    top: -10px;
+  }
+  
+  .left-ear {
+    left: 10px;
+    transform: rotate(-20deg);
+  }
+  
+  .right-ear {
+    right: 10px;
+    transform: rotate(20deg);
+  }
+  
+  .face {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .eye {
+    position: absolute;
+    background-color: #c0a300; /* Yellow eyes */
+    border-radius: 50%;
+    top: 0;
+    overflow: hidden; /* Ensure eyeballs stay inside */
+  }
+  
+  .boba .eye {
+    width: 38px; /* Bigger eyes for the big cat */
+    height: 38px; /* Bigger eyes for the big cat */
+  }
+  
+  .boba .left-eye {
+    left: -45px; /* Move left eye further left */
+  }
+  
+  .boba .right-eye {
+    right: -45px; /* Move right eye further right */
+  }
+  
+  .sago .eye {
+    width: 20px; /* Smaller eyes for the small cat */
+    height: 20px; /* Smaller eyes for the small cat */
+  }
+  
+  .eyeball {
+    position: absolute;
+    width: 16px; /* Eyeball size */
+    height: 16px; /* Eyeball size */
+    background-color: #000000; /* Black eyeballs */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .left-eye .eyeball {
+    top: 50%;
+    left: 58%;
+  }
+  
+  .right-eye .eyeball {
+    top: 50%;
+    left: 42%;
+  }
+  
+  .boba .eyeball {
+    width: 33px; /* Larger eyeball for big cat */
+    height: 33px; /* Larger eyeball for big cat */
+  }
+  
+  .left-eye {
+    left: -25px; /* Move left eye further left */
+  }
+  
+  .right-eye {
+    right: -25px; /* Move right eye further right */
+  }
+  
+  .mouth {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border: 2px solid #ffffff; /* White mouth */
+    border-top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .boba .mouth {
+    top: 100px; /* Move the big cat's mouth down */
+  }
+  
+  .sago .mouth {
+    top: 40px; /* Adjust small cat's mouth position */
+  }
+  
+  /* Tail Styles */
+  .tail {
+    position: absolute;
+    background-color: #000000; /* Black tail */
+    width: 40px;
+    height: 10px;
+    border-radius: 50%;
+    bottom: 25px;
+    right: -20px; /* Bring tail closer to body */
+    transform: rotate(-45deg);
+    animation: wag 2s infinite ease-in-out;
+  }
+  
+  .boba .tail {
+    width: 70px; /* Longer tail for the big cat */
+    height: 15px; /* Thicker tail for the big cat */
+    bottom: 30px;
+    right: -25px; /* Bring tail closer to body */
+  }
+  
+  /* Floating Animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  /* Tail Wagging Animation */
+  @keyframes wag {
+    0%, 100% {
+      transform: rotate(-45deg);
+    }
+    50% {
+      transform: rotate(-30deg);
+    }
+  }
